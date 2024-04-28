@@ -11,6 +11,8 @@ This is currently a work in progress and may be a bit rough.
 
 ## Data Structures
 
+A data structure is a collection of data values with the relationships between them and the operations that can be applied to the data.
+
 ### 1. Array
 
 ### 2. Linked List
