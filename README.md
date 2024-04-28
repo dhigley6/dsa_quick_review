@@ -15,11 +15,28 @@ This is currently a work in progress and may be a bit rough.
 
 ### 2. Linked List
 
+A linked list a collection of elements where each element has a link to the next element (singly linked list), or a link to both the next and previous elements (doubly linked list).
+
+Tips
+- Create pointers to needed nodes before breaking links. Often in linked list problems, there will be situations where you need to manipulate the links between elements. In such cases, it is often important to first traverse the linked list in its original state to find nodes that you will need during or after the link manipulations. A well-known example occurs in reversing a linked list (https://leetcode.com/problems/reverse-linked-list/description/).
+- Dummy node. Often, linked list problems require iterating through the list elements. In such cases, it can be useful to create a dummy node as the first node in the iteration. The dummy node helps to not have to setup additional logic to handle the first element in the linked list, but is not used in the final returned result.
+
+Implementation in Python
+```Python
+class Node:
+
+    def __init__(self, value, next):
+        self.value = value
+        self.next = next
+```
+
 ### 3. Stack and Queue
 
-A stack is a collection of 
+Stacks and queues are both collections of elements with the ability to insert additional elements or remove elements. In a stack, the most recently inserted element is the first to be removed (FILO, First In Last Out), whereas in a queue the first element inserted is the 
 
-### 4. Hashmap
+Implementations in Python: In python, you can use a simple list as a stack with the append (add element) and pop (remove element) methods if you don't mind that these methods only have amortized constant time complexity. If you do mind, you can use the collections.deque class with the same methods. The collections.deque class can also be used as a queue with the append (add element) and popleft (remove element) methods.
+
+### 4. Hashmap and Hashset
 
 ### 5. Tree
 
