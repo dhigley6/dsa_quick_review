@@ -74,8 +74,28 @@ Basic idea:
 
 ### 6. Dynamic Programming
 
-### 7. Greedy Algorithms
+Top-Down Memoization
 
-### 8. Pattern Matching
+Bottup-Up Tabulation
 
-### 9. Bit Manipulation
+### 7. Graph Algorithms
+
+Depth First Search
+
+Breadth First Search
+
+Topological Sort
+
+Union Find
+
+Shortest paths: Djikstra's Algorithm
+
+Minimum Spanning Tree: Prim's Algorithm
+
+### 8. Greedy Algorithms
+
+### 9. Pattern Matching
+
+Knuth-Morris-Pratt algorithm
+
+### 10. Bit Manipulation
