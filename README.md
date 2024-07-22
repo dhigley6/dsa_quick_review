@@ -382,17 +382,79 @@ Basic idea: iteratively build up a table of solutions to subproblems, starting f
 
 ### 8. Graph Algorithms
 
-Depth First Search
+#### 8a. Depth First Search
 
-Breadth First Search
+Basic idea: Recursively traverse a graph by traveling along each path until it is no longer possible to continue on that path, then going back to the nearest previous point where we can continue traversal. Repeat until all reachable nodes have been traversed.
 
-Topological Sort
+Template in Python
+```Python
+# Adapted from https://dev.to/alexhanbich/dfs-python-templates-4g7l
+# We can expand the below template to handle passing up information from nodes
+# that are traversed later by using information returned from do_something.
+# We can also expand it to handle passing down information from nodes that
+# have been traversed before as additional parameters of do_something.
+# Note that if we are traversing a tree, keeping track of visited nodes
+# is not required as long as we simply traverse from parent nodes to child
+# nodes.
 
-Union Find
+visited = set()
 
-Shortest paths: Djikstra's Algorithm
+def do_something(node):
+    # replace with problem logic
+    pass
 
-Minimum Spanning Tree: Prim's Algorithm
+def get_neighbors(node):
+    # replace with problem logic
+    pass
+
+def dfs(node, visited):
+    if node in visited:
+        return
+    do_something(node)
+    visited.add(node)
+    for neighbor in get_neighbors(node):
+        dfs(neighbor, visited)
+```
+
+#### 8b. Breadth First Search
+
+Basic idea: iteratively traverse a graph by visiting a node, then all of its neighbors, then all of its neighbors' neighbors, then all of its neighbors' neighbors' neighbors, etc. (while not revisiting nodes).
+
+Template in Python
+```Python
+# Note that if we are traversing a tree, keeping track of visited nodes
+# is not required as long as we simply traverse from parent nodes to child
+# nodes.
+from collections import deque
+
+visited = set()
+
+def do_something(node):
+    pass
+
+def get_neighbors(node):
+    pass
+
+def bfs(start_node, visited):
+    to_visit = deque()
+    to_visit.append(start_node)
+    while len(to_visit) > 0:
+        node = to_visit.popleft()
+        if node in visited:
+            continue
+        do_something(node)
+        neighbor_list = get_neighbors(node)
+        for neighbor in neighbor_list:
+            to_visit.append(neighbor)
+```
+
+#### 8c. Topological Sort
+
+#### 8d. Union Find
+
+#### 8e. Shortest paths: Djikstra's Algorithm
+
+#### 8f. Minimum Spanning Tree: Prim's Algorithm
 
 ### 9. Greedy Algorithms
 
