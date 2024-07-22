@@ -285,19 +285,46 @@ See https://docs.python.org/3/howto/sorting.html for more information.
 
 ### 3. Two Pointers
 
-Basic idea: 
+Basic idea: Create two pointers that point to indicies in an array and move them across the array to solve the problem.
 
 ### 4. Sliding Window
 
-### 5. Backtracking
+Basic idea: Iteratively move a window across an array, calculating properties of the window as you go, to solve a problem.
 
-### 6. Dynamic Programming
+### 5. Binary Search
+
+Basic idea: Find an element with a particular value in a sorted array (if it exists) by recursively dividing the array in half and searching the half that it must belong in (if it is there).
+
+Implementation in Python
+```Python
+# Adapted from https://www.geeksforgeeks.org/python-program-for-binary-search/
+def binary_search(arr, low, high, x):
+    """Searches for the presence of x in arr between indicies low and high, inclusive
+    Returns index of x in arr if it exists, otherwise returns -1
+    """
+    if high >= low:
+        mid = (high + low) // 2
+        if arr[mid] == x:
+            return mid
+        elif arr[mid] > x:
+            return binary_search(arr, low, mid-1, x)
+        else:
+            return binary_search(arr, mid+1, high, x)
+    else:
+        return -1
+```
+
+### 6. Backtracking
+
+Basic idea:
+
+### 7. Dynamic Programming
 
 Top-Down Memoization
 
 Bottup-Up Tabulation
 
-### 7. Graph Algorithms
+### 8. Graph Algorithms
 
 Depth First Search
 
@@ -311,10 +338,10 @@ Shortest paths: Djikstra's Algorithm
 
 Minimum Spanning Tree: Prim's Algorithm
 
-### 8. Greedy Algorithms
+### 9. Greedy Algorithms
 
-### 9. Pattern Matching
+### 10. Pattern Matching
 
 Knuth-Morris-Pratt algorithm
 
-### 10. Bit Manipulation
+### 11. Bit Manipulation
