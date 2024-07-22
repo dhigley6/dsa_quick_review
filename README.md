@@ -353,9 +353,32 @@ def solve():
 
 ### 7. Dynamic Programming
 
-Top-Down Memoization
+Dynamic programming provides efficient methods to solve certain problems.
 
-Bottup-Up Tabulation
+Depending on the source, both top-down memoization and bottum-up tabulation may be considered dynamic programming techniques or just bottum-up tabulation. Bottom-up tabulation is iterative and benefits from not having the overhead of recursive top-down memoization, but memoization benefits from not having to solve all subproblems where that is not required. If all subproblems need to be solved at least once, then tabulation will usually outperform memoization by a constant factor.
+
+#### 7a. Top-Down Memoization
+
+Basic idea: speed up solutions to problems by saving solutions to solved subproblems, and reusing those solutions later.
+
+Template implementation in Python
+```Python
+result_memo = {}
+
+def solver(k):
+    if k is base_case:
+        # replace with base case logic
+        return 0
+    elif k not in result_memo:
+         # replace below line with logic to calculate result for k
+         result_for_k = 1
+         result_memo[k] = result_for_k
+    return result_memo[k]
+```
+
+#### 7b. Bottup-Up Tabulation
+
+Basic idea: iteratively build up a table of solutions to subproblems, starting from the smallest subproblems, and using the solutions of already solved subproblems to calculate the solution to the current subproblem.
 
 ### 8. Graph Algorithms
 
