@@ -135,12 +135,101 @@ A heap is a complete binary tree that satisfies the heap property (for every nod
 
 Implementation in Python
 ```Python
+import heapq
 
+# initialization of min heap
+heap = [5, 6, 7]
+heapq.heapify(heap)
+
+# adding items
+heapq.heappush(heap, 10)
+heapq.heappush(heap, 20)
+heapq.heappush(heap, 30)
+
+# removing element
+element = heapq.heappop(heap)
+print(element)    # 5
 ```
 
 ### 9. Trie
+A Trie is a tree used for storing a dynamic set of strings.
+
+Implementation in Python
+```Python
+# from Neetcode solution for Leetcode 208
+class TrieNode:
+    def __init__(self):
+        self.children = {}
+        self.end_of_word = False
+
+class Trie:
+    def __init__(self):
+        self.root = TrieNode()
+
+    def insert(self, word: str) -> None:
+        """Insert a new word into the Trie
+        """
+        cur = self.root
+        for c in word:
+            if c not in cur.children:
+                cur.children[c] = TrieNode()
+            cur = cur.children[c]
+        cur.end_of_word = True
+
+    def search(self, word: str) -> bool:
+        """Check for presence of word in Trie
+        """
+        cur = self.root
+        for c in word:
+            if c not in cur.children:
+                return False
+            cur = cur.children[c]
+        return cur.end_of_word
+```
 
 ### 10. Graph
+A graph is a collection of nodes connected by edges. Graphs can be either directed (have edges that are oriented in particular directions) or undirected. A tree is a special case of a graph which has no cycles. A linked list is another special case of a graph. Graphs can be implemented in different ways with tradeoffs in space/time complexities.
+
+Implementation of graph as edge list in Python
+```Python
+# An edge list simply lists the edges between nodes in a graph
+# (the nodes are numbered between 0 and n-1, where n is the number of nodes)
+edge_list = [ [0,1], [0,6], [0,8], [1,4], [1,6], [1,9], [2,4], [2,6], [3,4], [3,5],
+[3,8], [4,5], [4,9], [7,8], [7,9] ]
+# from https://www.khanacademy.org/computing/computer-science/algorithms/graph-representation/a/representing-graphs
+# having a sorted edge list allows us to search for the presence of a particular edge in logarithmic time
+```
+
+Implementation of graph as adjacency list in Python
+```Python
+# adapted from https://www.khanacademy.org/computing/computer-science/algorithms/graph-representation/a/representing-graphs
+# for each vertex, we store an array of the verticies adjacent to it
+adjacency_list = [ [1, 6, 8],
+  [0, 4, 6, 9],
+  [4, 6],
+  [4, 5, 8],
+  [1, 2, 3, 5, 9],
+  [3, 4],
+  [0, 1, 2],
+  [8, 9],
+  [0, 3, 7],
+  [1, 4, 7]
+]
+# above, row i in the matrix lists the nodes that are adjacent to node i
+```
+
+Implementation of graph as adjacency matrix in Python
+```Python
+# adapted from https://www.khanacademy.org/computing/computer-science/algorithms/graph-representation/a/representing-graphs
+# For a graph with n nodes, an adjacency matrix is a n by n matrix of 0s and 1s where the entry at (i, j) is 1 if and
+# only if there is an edge from i to j, otherwise it is 0.
+
+adjacency_matrix = [
+    [0, 1, 0],
+    [1, 0, 1],
+    [0, 1, 0]
+]
+```
 
 ## Algorithms
 
