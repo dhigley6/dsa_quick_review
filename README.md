@@ -237,15 +237,49 @@ adjacency_matrix = [
 
 #### 1.a. Merge Sort
 
-Basic idea: 
+Basic idea: Recursively divide array into two halfs, sort the halfs, then combine them back together to obtain the sorted array.
+
+Implementation in Python
+```Python
+# TODO
+```
 
 #### 1.b. Quick Sort
 
+Basic idea: Recursively pick an element in the array as the pivot. Arrange the array such that values lower than the pivot are before it and values higher than the pivot are after it. Next, apply quicksort to the sub-arrays before and after the pivot. Repeat until the array is sorted.
+
+Implementation in Python
+```Python
+# TODO
+```
+
 #### 1.c. Sorting in Python
 
-In Python, you can use the list.sort method to sort lists in place or the sorted function, which returns a list of sorted elements of the iterable passed to it.
+In Python, you can use the list.sort method to sort lists in place or the sorted function, which returns a list of sorted elements of the iterable passed to it. Each of these a 'reverse' argument which can be specified as True to sort in descending order.
 
-https://docs.python.org/3/howto/sorting.html
+```Python
+# Sorting a list with Python's list.sort method:
+basic_list = [2, 5, 7, 1, 1, 0]
+basic_list.sort()
+print(basic_list)    # [0, 1, 1, 2, 5, 7]
+
+# Using Python's built-in sorted function to sort a list:
+basic_list = [2, 5, 7, 1, 1, 0]
+sorted_list = sorted(basic_list)
+print(sorted_list)    # [0, 1, 1, 2, 5, 7]
+
+# Using Python's built-in sorted function to sort another iterable (returns a list):
+basic_set = {1, 2, 0, -1}
+sorted_set = sorted(basic_set)
+print(sorted_set)    # [-1, 0, 1, 2]
+
+# Using key argument to apply a function to the elements before sorting (can also be used in list.sort)
+basic_set = {1, 2, 0, -1}
+absolute_value_sorted_set = sorted(basic_set, key=abs)
+print(absolute_value_sorted_set)    # [0, 1, -1, 2]
+```
+
+See https://docs.python.org/3/howto/sorting.html for more information.
 
 ### 2. Recursion
 
