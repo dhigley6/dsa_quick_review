@@ -316,7 +316,40 @@ def binary_search(arr, low, high, x):
 
 ### 6. Backtracking
 
-Basic idea:
+Basic idea: Try different options to solve a problem, undoing decisions where they are found to not work. Repeat until a solution is found or all possibilities are exhausted.
+
+Template in Python
+```Python
+# Adapted from https://christianjmills.com/posts/backtracking-notes/index.html
+# Note: if you have a problem where the state can repeat elements, then you can
+# represent the state as a list instead of a set.
+
+def is_valid_solution(state):
+    # replace with logic to check if state is a valid solution
+    return True
+
+def get_candidates(state):
+    # replace with logic to get list of potential next steps from state
+    return []
+
+def search(state, solutions):
+    """Perform recursive depth first search to find solutions.
+    """
+    if is_valid_solution(state):
+        solutions.append(state.copy())
+        # if you only need one solution, then add a return here
+    for candidate in get_candidates(state):
+        state.add(candidate)
+        search(state, solutions)
+        state.remove(candidate)
+
+# Entry point
+def solve():
+    solutions = []
+    state = set()
+    search(state, solutions)
+    return solutions
+```
 
 ### 7. Dynamic Programming
 
