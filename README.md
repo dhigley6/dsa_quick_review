@@ -291,6 +291,8 @@ See https://docs.python.org/3/howto/sorting.html for more information.
 
 ### 2. Recursion
 
+Recursion is a way to achieve repetition in a porgram. In recursion, a function makes one or more calls to itself during execution. In analyzing the space complexity of recursive algorithms, remember to take into account the memory of the entire call stack. An algorithm that uses recursion typically includes base cases which can complete without recursive calls along with a recurrent part.
+
 ### 3. Two Pointers
 
 Basic idea: Create two pointers that point to indicies in an array and move them across the array to solve the problem.
