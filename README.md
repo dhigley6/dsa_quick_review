@@ -9,6 +9,14 @@ This is currently a work in progress and may be a bit rough.
 
 ## Algorithm Analysis
 
+$f(n)$ is $O(g(n))$ if there is a real constant $c > 0$ and an integer constant $n_0 \geq 1$ such that 
+
+$f(n) \leq cg(n)$
+
+for $n \geq n_0$. We typically seek to characterize running times of algorithms in terms of their asymptotic time complexity (often worst case). For example, merge sort is worst case $O(n\log n)$. In amortized analysis of an algorithm, we analyze the average performance of an algorithm over multiple operations. For example, appending to a dynamic array has worst case time complexity $O(n)$ since this may require resizing and moving the array in memory, eventhough most operations have constant $O(1)$ time complexity. By amortizing the analysis over many append operations though, the amortized time complexity is $O(1)$ since the resizing operation will only need to occur once every ~1/n operations.
+
+In the same manner as for time complexity of an algorithm, we can also examine its asymptotic memory usage (often called space complexity). For example, the memory usage of a dynamic array is $O(n)$.
+
 ## Data Structures
 
 A data structure is a collection of data values with the relationships between them and the operations that can be applied to the data.
