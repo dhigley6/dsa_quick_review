@@ -31,6 +31,8 @@ Implementation in Python
 array = []
 ```
 
+TODO: Add notes on referential, dynamic arrays
+
 ### 2. Linked List
 
 A linked list a collection of elements where each element has a link to the next element (singly linked list), or a link to both the next and previous elements (doubly linked list).
@@ -47,6 +49,8 @@ class Node:
         self.value = value
         self.next = next
 ```
+
+TODO: Add notes on positional linked list
 
 ### 3. Stack
 
