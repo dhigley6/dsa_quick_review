@@ -485,6 +485,8 @@ Knuth-Morris-Pratt algorithm
 ### 11. Bit Manipulation
 
 
-## Other References
+## References
 
 Templates: https://dev.to/alexhanbich/dfs-python-templates-4g7l
+
+Algorithms cheat sheets of Tech Interview Handbook: https://www.techinterviewhandbook.org/algorithms/study-cheatsheet/
