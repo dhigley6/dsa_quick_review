@@ -163,6 +163,12 @@ element = heapq.heappop(heap)
 print(element)    # 5
 ```
 
+| Operation | Time Complexity |
+|-----------|-----------------|
+| Find max/min | O(1) |
+| Insert | O(log(n)) |
+| Remove | O(log(n)) |
+
 ### 9. Trie
 A Trie is a tree used for storing a dynamic set of strings.
 
