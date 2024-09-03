@@ -34,6 +34,7 @@ array = []
 TODO: Add notes on referential, dynamic arrays
 
 | Operation | Time Complexity |
+|-----------|-----------------|
 | Access | O(1) |
 | Insert | O(n) |
 | Insert at end | O(1) |
@@ -60,6 +61,7 @@ class Node:
 TODO: Add notes on positional linked list
 
 | Operation | Time Complexity |
+|-----------|-----------------|
 | Access | O(n) |
 | Search | O(n) |
 | Insert | O(1) (assuming you have traversed to the insertion position) |
@@ -113,6 +115,7 @@ print(popped_element)    # 0
 ```
 
 | Operation | Time Complexity |
+|-----------|-----------------|
 | Enqueue | O(1) |
 | Dequeue | O(1) |
 | Front | O(1) |
