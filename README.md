@@ -25,8 +25,9 @@ A data structure is a collection of data values with the relationships between t
 
 An array is a collection of items of the same variable type stored at contiguous locations in memory.
 
-Implementation in Python
 ```Python
+# Implementation in Python
+
 # Dynamic array (elements are added and removed as needed)
 array = []
 ```
@@ -49,8 +50,9 @@ Tips
 - Create pointers to needed nodes before breaking links. Often in linked list problems, there will be situations where you need to manipulate the links between elements. In such cases, it is often important to first traverse the linked list in its original state to find nodes that you will need during or after the link manipulations. A well-known example occurs in reversing a linked list (https://leetcode.com/problems/reverse-linked-list/description/).
 - Dummy node. Often, linked list problems require iterating through the list elements. In such cases, it can be useful to create a dummy node as the first node in the iteration. The dummy node helps to not have to setup additional logic to handle the first element in the linked list, but is not used in the final returned result.
 
-Implementation in Python
 ```Python
+# Implementation in Python
+
 class Node:
 
     def __init__(self, value, next):
@@ -71,8 +73,9 @@ class Node:
 
 A stack is a collection of elements with the ability to insert an additional element at the top of the stack or remove the element currently at the top of the stack. Sice the most recently inserted element is the first to be removed, stacks are FILO (First In Last Out).
 
-Implementation in Python
 ```Python
+# Implementation in Python
+
 # initialization
 stack = []
 
@@ -98,8 +101,9 @@ print(popped_element)     # 5
 
 A queue, similarly to a stack, is a collection of elements with the ability to insert additional elements or remove elements. Unlink a stack, for a queue the least recently inserted element is the next to be removed (First In First Out).
 
-Implementations in Python:
 ```Python
+# Implementations in Python:
+
 from collections import deque
 
 # initialization
@@ -123,8 +127,9 @@ print(popped_element)    # 0
 ### 5. Hashmap
 Uses a hash function to map keys to a fixed-size array, called a hash table. During lookup, the key is hashed and the resulting value indicates where the corresponding value is stored.
 
-Implementation in Python
 ```Python
+# Implementation in Python
+
 # initialization
 hashmap = {}
 
@@ -145,8 +150,9 @@ print(hashmap['b'])    # 0
 ### 6. Hashset
 A collection of items where every item is unique. Uses a hash function to achieve constant time operations.
 
-Implementation in Python
 ```Python
+# Implementation in Python
+
 # Initialization
 hashset = set()
 
@@ -162,8 +168,9 @@ print(0 in hashset)    # False
 ### 7. Tree
 Stores data in a hierarchical manner with a root node having various child nodes, which can then have their own child nodes, etc. Nodes are connected by edges. There are many different special cases of the tree data structure.
 
-Implementation in Python
 ```Python
+# Implementation in Python
+
 class TreeNode:
     def __init__(self, data):
         self.data = data
@@ -187,8 +194,10 @@ root.children = [child_1, child_2]
 ### 8. Heap
 A heap is a complete binary tree that satisfies the heap property (for every node, the value of its children is less than or equal to its own value (for a min heap), or for every node, the value of its children is greater than or equal to its own value (for a max heap).). A heap balances time complexity of finding the minimum/maximum with time complexity of insertion/removal. It is a good data structure when it is necessarily to repeatedly remove the minimum/maximum or when insertions need to be interspersed with removals of the minimum/maximum.
 
-Implementation in Python
+<!--- TODO: Add implementation of maxheap in Python --->
 ```Python
+# Implementation in Python
+
 import heapq
 
 # initialization of min heap
@@ -215,8 +224,9 @@ print(element)    # 5
 ### 9. Trie
 A Trie is a tree used for storing a dynamic set of strings. If a string is stored in a Trie, then it will have nodes traversable from the root node that correspond to its characters in the same order as the word. At the last node of the Trie for the word, a Node parameter indicating whether that Node corresponds to the end of a word is set to True.
 
-Implementation in Python
 ```Python
+# Implementation in Python
+
 # from Neetcode solution for Leetcode 208
 class TrieNode:
     def __init__(self):
@@ -258,8 +268,9 @@ In the below table, m is the length of the string used in the operation
 ### 10. Graph
 A graph is a collection of nodes connected by edges. Graphs can be either directed (have edges that are oriented in particular directions) or undirected. A tree is a special case of a graph which has no cycles. A linked list is another special case of a graph. Graphs can be implemented in different ways with tradeoffs in space/time complexities.
 
-Implementation of graph as edge list in Python
 ```Python
+# Implementation of graph as edge list in Python
+
 # An edge list simply lists the edges between nodes in a graph
 # (the nodes are numbered between 0 and n-1, where n is the number of nodes)
 edge_list = [ [0,1], [0,6], [0,8], [1,4], [1,6], [1,9], [2,4], [2,6], [3,4], [3,5],
@@ -268,8 +279,9 @@ edge_list = [ [0,1], [0,6], [0,8], [1,4], [1,6], [1,9], [2,4], [2,6], [3,4], [3,
 # having a sorted edge list allows us to search for the presence of a particular edge in logarithmic time
 ```
 
-Implementation of graph as adjacency list in Python
 ```Python
+# Implementation of graph as adjacency list in Python
+
 # adapted from https://www.khanacademy.org/computing/computer-science/algorithms/graph-representation/a/representing-graphs
 # for each vertex, we store an array of the verticies adjacent to it
 adjacency_list = [ [1, 6, 8],
@@ -286,8 +298,9 @@ adjacency_list = [ [1, 6, 8],
 # above, row i in the matrix lists the nodes that are adjacent to node i
 ```
 
-Implementation of graph as adjacency matrix in Python
 ```Python
+# Implementation of graph as adjacency matrix in Python
+
 # adapted from https://www.khanacademy.org/computing/computer-science/algorithms/graph-representation/a/representing-graphs
 # For a graph with n nodes, an adjacency matrix is a n by n matrix of 0s and 1s where the entry at (i, j) is 1 if and
 # only if there is an edge from i to j, otherwise it is 0.
@@ -358,8 +371,9 @@ Basic idea: Iteratively move a window across an array, calculating properties of
 
 Basic idea: Find an element with a particular value in a sorted array (if it exists) by recursively dividing the array in half and searching the half that it must belong in (if it is there).
 
-Implementation in Python
 ```Python
+# Implementation in Python
+
 # Adapted from https://www.geeksforgeeks.org/python-program-for-binary-search/
 def binary_search(arr, low, high, x):
     """Searches for the presence of x in arr between indicies low and high, inclusive
@@ -399,8 +413,9 @@ def merge_intervals(a, b):
 
 Basic idea: Try different options to solve a problem, undoing decisions where they are found to not work. Repeat until a solution is found or all possibilities are exhausted.
 
-Template in Python
 ```Python
+# Template in Python
+
 # Adapted from https://christianjmills.com/posts/backtracking-notes/index.html
 # Note: if you have a problem where the state can repeat elements, then you can
 # represent the state as a list instead of a set.
@@ -442,8 +457,9 @@ Depending on the source, both top-down memoization and bottum-up tabulation may 
 
 Basic idea: speed up solutions to problems by saving solutions to solved subproblems, and reusing those solutions later.
 
-Template implementation in Python
 ```Python
+Template in Python
+
 result_memo = {}
 
 def solver(k):
@@ -467,8 +483,9 @@ Basic idea: iteratively build up a table of solutions to subproblems, starting f
 
 Basic idea: Recursively traverse a graph by traveling along each path until it is no longer possible to continue on that path, then going back to the nearest previous point where we can continue traversal. Repeat until all reachable nodes have been traversed.
 
-Template in Python
 ```Python
+# Template in Python
+
 # Adapted from https://dev.to/alexhanbich/dfs-python-templates-4g7l
 # We can expand the below template to handle passing up information from nodes
 # that are traversed later by using information returned from do_something.
@@ -501,8 +518,9 @@ def dfs(node, visited):
 
 Basic idea: iteratively traverse a graph by visiting a node, then all of its neighbors, then all of its neighbors' neighbors, then all of its neighbors' neighbors' neighbors, etc. (while not revisiting nodes).
 
-Template in Python
 ```Python
+# Template in Python
+
 # Note that if we are traversing a tree, keeping track of visited nodes
 # is not required as long as we simply traverse from parent nodes to child
 # nodes.
@@ -531,11 +549,15 @@ def bfs(start_node, visited):
 
 #### 8c. Topological Sort
 
+A topological ordering of a graph is an ordering of its verticies such that, for every directed edge u->v in the graph, u comes before v in the ordering.
+
+```Python
+# Topological Sort in Python
+```
+
 #### 8d. Union Find
 
 #### 8e. Shortest paths: Djikstra's Algorithm
-
-#### 8f. Minimum Spanning Tree: Prim's Algorithm
 
 ### 9. Greedy Algorithms
 
