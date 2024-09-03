@@ -567,6 +567,28 @@ Knuth-Morris-Pratt algorithm
 
 ### 11. Bit Manipulation
 
+Python Bitwise Operators
+| Operator | Action |
+|----------|--------|
+| & | Bitwise AND |
+| | | Bitwise OR |
+| ^ | Bitwise XOR |
+| ~ | Bitwise NOT |
+| >> | Bitwise Right Shift |
+| << | Bitwise Left Shift |
+
+Helpful Bitwise Utilities (from https://www.techinterviewhandbook.org/algorithms/binary/)
+| Technique | Code |
+|-----------|------|
+| Test kth bit is set | num & (1 << k) != 0 |
+| Set kth bit | num |= (1 << k) |
+| Turn off kth bit | num &= ~(1 << k) |
+| Toggle the kth bit | num ^= (1 << k) |
+| Multiply by 2$^k$ | num << k |
+| Divide by 2$^k$ | num >> k |
+| Check if a number is a power of 2 | (num & num - 1) == 0 |
+| Swapping two variables | num1 ^= num2; num2 ^= num1; num1 ^= num2 |
+
 
 ## References
 
