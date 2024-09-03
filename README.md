@@ -182,7 +182,7 @@ root.children = [child_1, child_2]
 | Remove | O(log(n)) |
 
 ### 8. Heap
-A heap is a complete binary tree that satisfies the heap property (for every node, the value of its children is less than or equal to its own value (for a min heap), or for every node, the value of its children is greater than or equal to its own value (for a max heap).).
+A heap is a complete binary tree that satisfies the heap property (for every node, the value of its children is less than or equal to its own value (for a min heap), or for every node, the value of its children is greater than or equal to its own value (for a max heap).). A heap balances time complexity of finding the minimum/maximum with time complexity of insertion/removal. It is a good data structure when it is necessarily to repeatedly remove the minimum/maximum or when insertions need to be interspersed with removals of the minimum/maximum.
 
 Implementation in Python
 ```Python
@@ -207,9 +207,10 @@ print(element)    # 5
 | Find max/min | O(1) |
 | Insert | O(log(n)) |
 | Remove | O(log(n)) |
+| Heapify (create a heap out of a given array of elements) | O(n) |
 
 ### 9. Trie
-A Trie is a tree used for storing a dynamic set of strings.
+A Trie is a tree used for storing a dynamic set of strings. If a string is stored in a Trie, then it will have nodes traversable from the root node that correspond to its characters in the same order as the word. At the last node of the Trie for the word, a Node parameter indicating whether that Node corresponds to the end of a word is set to True.
 
 Implementation in Python
 ```Python
@@ -243,6 +244,13 @@ class Trie:
             cur = cur.children[c]
         return cur.end_of_word
 ```
+
+In the below table, m is the length of the string used in the operation
+| Operation | Time Complexity |
+|-----------|-----------------|
+| Search | O(m) |
+| Insert | O(m) |
+| Remove | O(m) |
 
 ### 10. Graph
 A graph is a collection of nodes connected by edges. Graphs can be either directed (have edges that are oriented in particular directions) or undirected. A tree is a special case of a graph which has no cycles. A linked list is another special case of a graph. Graphs can be implemented in different ways with tradeoffs in space/time complexities.
