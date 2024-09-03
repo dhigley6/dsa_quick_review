@@ -33,9 +33,16 @@ array = []
 
 TODO: Add notes on referential, dynamic arrays
 
+| Operation | Time Complexity |
+| Access | O(1) |
+| Insert | O(n) |
+| Insert at end | O(1) |
+| Remove | O(n) |
+| Remove at end | O(1) |
+
 ### 2. Linked List
 
-A linked list a collection of elements where each element has a link to the next element (singly linked list), or a link to both the next and previous elements (doubly linked list).
+A linked list a collection of elements where each element has a link to the next element (singly linked list), or a link to both the next and previous elements (doubly linked list). Unlinke an array, the elements in a linked list are not necessarily stored in sequential blocks of memory.
 
 Tips
 - Create pointers to needed nodes before breaking links. Often in linked list problems, there will be situations where you need to manipulate the links between elements. In such cases, it is often important to first traverse the linked list in its original state to find nodes that you will need during or after the link manipulations. A well-known example occurs in reversing a linked list (https://leetcode.com/problems/reverse-linked-list/description/).
@@ -51,6 +58,12 @@ class Node:
 ```
 
 TODO: Add notes on positional linked list
+
+| Operation | Time Complexity |
+| Access | O(n) |
+| Search | O(n) |
+| Insert | O(1) (assuming you have traversed to the insertion position) |
+| Remove | O(1) (assuming you have traversed to the removal position) |
 
 ### 3. Stack
 
@@ -73,6 +86,12 @@ print(popped_element)     # 5
 # If you need constant time complexity, you can use the collections.deque class
 ```
 
+| Operation | Time Complexity |
+|-----------|-----------------|
+| Top | O(1) |
+| Push | O(1) |
+| Pop | O(1) |
+
 ### 4. Queue
 
 A queue, similarly to a stack, is a collection of elements with the ability to insert additional elements or remove elements. Unlink a stack, for a queue the least recently inserted element is the next to be removed (First In First Out).
@@ -93,8 +112,13 @@ popped_element = queue.popleft()
 print(popped_element)    # 0
 ```
 
+| Operation | Time Complexity |
+| Enqueue | O(1) |
+| Dequeue | O(1) |
+| Front | O(1) |
+
 ### 5. Hashmap
-Uses a hash function to map keys to a fixed-size array, called a hash table.
+Uses a hash function to map keys to a fixed-size array, called a hash table. During lookup, the key is hashed and the resulting value indicates where the corresponding value is stored.
 
 Implementation in Python
 ```Python
@@ -108,6 +132,12 @@ hashmap['b'] = 0
 # retrieve an element from the hashmap
 print(hashmap['b'])    # 0
 ```
+
+| Operation | Time Complexity |
+|--------|----------------|
+| Search | O(1) (average) |
+| Insert | O(1) (average) |
+| Remove | O(1) (average) |
 
 ### 6. Hashset
 A collection of items where every item is unique. Uses a hash function to achieve constant time operations.
@@ -332,6 +362,24 @@ def binary_search(arr, low, high, x):
             return binary_search(arr, mid+1, high, x)
     else:
         return -1
+```
+
+### 6. Working with Intervals
+
+#### 6a. Checking if Two Intervals Overlap
+
+```Python
+# Adapted from https://www.techinterviewhandbook.org/algorithms/interval/
+def intervals_overlap(a, b):
+    return a[0] < b[1] and b[0] < a[1]
+```
+
+#### 6b. Merging Two Intervals
+
+```Python
+# Adapted from https://www.techinterviewhandbook.org/algorithms/interval/
+def merge_intervals(a, b):
+    return [min(a[0], b[0]), max(a[1], b[1])]
 ```
 
 ### 6. Backtracking
