@@ -3,8 +3,6 @@ Quick review of Data Structures and Algorithms
 
 ## About
 
-<!--- Comments are Fun --->
-
 I'm using this README for two things: 1. A way for me to periodically review data structures and algorithms, 2. A checklist of sorts for my current understanding of data structures and algorithms. If I don't feel fluent with a particular topic in reviewing it, then I know to spend more time reviewing it. A third purpose of this for myself is to solidify my understanding of Data Structures and Algorithms by making this document. This could be useful for others seeking either of these same uses. This is going to describe things quickly without a pedagogical foucs. If one is interested in learning parts of Data Structures and Algorithms without significant prior exposure, then I recommend the book "Data Structures and Algorithms in Python" by Goodrich, Tamassia and Goldwasser and the set of Leetcode problems organized by Neetcode and his associated solution videos (https://neetcode.io/roadmap). I've also found this video on Dynamic Programming helpful https://www.youtube.com/watch?v=oBt53YbR9Kk. 
 
 This is currently a work in progress and may be a bit rough.
@@ -33,7 +31,7 @@ Implementation in Python
 array = []
 ```
 
-TODO: Add notes on referential, dynamic arrays
+<!--- TODO: add notes on referential, dynamic arrays --->
 
 | Operation | Time Complexity |
 |-----------|-----------------|
@@ -60,7 +58,7 @@ class Node:
         self.next = next
 ```
 
-TODO: Add notes on positional linked list
+<!--- TODO: Add notes on positional linked list --->
 
 | Operation | Time Complexity |
 |-----------|-----------------|
@@ -309,19 +307,9 @@ adjacency_matrix = [
 
 Basic idea: Recursively divide array into two halfs, sort the halfs, then combine them back together to obtain the sorted array.
 
-Implementation in Python
-```Python
-# TODO
-```
-
 #### 1.b. Quick Sort
 
 Basic idea: Recursively pick an element in the array as the pivot. Arrange the array such that values lower than the pivot are before it and values higher than the pivot are after it. Next, apply quicksort to the sub-arrays before and after the pivot. Repeat until the array is sorted.
-
-Implementation in Python
-```Python
-# TODO
-```
 
 #### 1.c. Sorting in Python
 
@@ -355,8 +343,8 @@ See https://docs.python.org/3/howto/sorting.html for more information.
 
 Recursion is a way to achieve repetition in a porgram. In recursion, a function makes one or more calls to itself during execution. In analyzing the space complexity of recursive algorithms, remember to take into account the memory of the entire call stack. An algorithm that uses recursion typically includes base cases which can complete without recursive calls along with a recurrent part.
 
-TODO: Add note on converting recursive algorithms to iterative
-TODO: Add note on tail recursion
+<!--- TODO: Add note on converting recursive algorithms to iterative --->
+<!--- TODO: Add note on tail recursion --->
 
 ### 3. Two Pointers
 
