@@ -172,6 +172,15 @@ child_2 = TreeNode(data=5)
 root.children = [child_1, child_2]
 ```
 
+#### 7a. Binary Search Tree
+
+| Operation | Time Complexity |
+|-----------|-----------------|
+| Access | O(log(n)) |
+| Search | O(log(n)) |
+| Insert | O(log(n)) |
+| Remove | O(log(n)) |
+
 ### 8. Heap
 A heap is a complete binary tree that satisfies the heap property (for every node, the value of its children is less than or equal to its own value (for a min heap), or for every node, the value of its children is greater than or equal to its own value (for a max heap).).
 
@@ -332,6 +341,9 @@ See https://docs.python.org/3/howto/sorting.html for more information.
 ### 2. Recursion
 
 Recursion is a way to achieve repetition in a porgram. In recursion, a function makes one or more calls to itself during execution. In analyzing the space complexity of recursive algorithms, remember to take into account the memory of the entire call stack. An algorithm that uses recursion typically includes base cases which can complete without recursive calls along with a recurrent part.
+
+TODO: Add note on converting recursive algorithms to iterative
+TODO: Add note on tail recursion
 
 ### 3. Two Pointers
 
