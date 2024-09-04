@@ -557,8 +557,6 @@ A topological ordering of a graph is an ordering of its verticies such that, for
 
 Djikstra's algorithm can be used to find the shortest path between two nodes of a weighted graph (note that, for an unweighted graph, a simple breadth first search will work). The main idea of Djikstra's algorithm is to start from a node, s, then iteratively add nodes to a cloud of nodes reachable from s. At each step, the node added to the cloud is the one outside the cloud that is closest to s. At the end of the algorithm, we have the shortest path lengths from s to every vertrex reachable from s. We can use a priority queue to store the verticies not yet in the cloud along with their approximate distances from s. Each time we pull a node into the cloud, we update approximate distances for nodes which are connected to the newly pulled in node according to their paths from s through the newly added node.
 
-### 9. Greedy Algorithms
-
 ### 10. Knuth-Morris-Pratt Pattern Matching Algorithm
 
 The Knuth-Morris-Pratt algorithm searches for occurrences of a word, W, within a main text string, S. The algorithm works efficiently by employing the observation that when a mismatch occurs, the word contains information about where the next match could begin.
