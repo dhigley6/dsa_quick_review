@@ -314,7 +314,7 @@ adjacency_matrix = [
 
 ### 11. Disjoint Set/Union-Find
 
-This is a data structure that stores non-overlapping (disjoint) sets of items. It supports operations for adding new sets, merging sets (union) and finding a representative member of a set.
+This is a data structure that stores non-overlapping (disjoint) sets of items. It supports operations for merging sets (union) and finding a representative member of a set.
 
 ```Python
 # Code adapted from https://www.geeksforgeeks.org/introduction-to-disjoint-set-data-structure-or-union-find-algorithm/
