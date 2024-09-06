@@ -641,7 +641,7 @@ Python Bitwise Operators
 | Operator | Action |
 |----------|--------|
 | & | Bitwise AND |
-| | | Bitwise OR |
+| \| | Bitwise OR |
 | ^ | Bitwise XOR |
 | ~ | Bitwise NOT |
 | >> | Bitwise Right Shift |
