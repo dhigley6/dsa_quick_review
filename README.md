@@ -312,6 +312,82 @@ adjacency_matrix = [
 ]
 ```
 
+### 11. Disjoint Set/Union-Find
+
+This is a data structure that stores non-overlapping (disjoint) sets of items. It supports operations for adding new sets, merging sets (union) and finding a representative member of a set.
+
+```Python
+# Code adapted from https://www.geeksforgeeks.org/introduction-to-disjoint-set-data-structure-or-union-find-algorithm/
+
+# Unoptimized initial implementation of DisjointSet
+class DisjointSetUnoptimized:
+
+    def __init__(self, size):
+        self.parent = list(range(size))
+
+    def find(self, i):
+        """Find the representative for the set that includes i
+        """
+        if parent[i] == i:
+            return i
+        else:
+            return find(parent[i])
+
+    def union(self, i, j):
+        """Unite the set that includes i and the set that includes j
+        """
+        i_representative = parent[i]
+        j_representative = parent[j]
+        parent[i_representative] = j_representative
+
+# We can improve the time complexities of the above solution by
+# 1. using path compression in the find method and
+# 2. union by rank in the union method:
+class DisjointSetOptimized:
+
+    def __init__(self, size):
+        self.parent = list(range(size))
+        self.rank = [0] * size
+
+    def find(self, i):
+        """Find the representative for the set that includes i
+        """
+        if self.parent[i] != i:
+            self.parent[i] = self.find(self.parent[i])
+        return self.parent[i]
+
+    def union(self, i, j):
+        """Unite the set that includes i and the set that includes j
+        self.rank[x] is the number of levels in the tree with x as its
+        representative
+        """
+        i_representative = self.find(i)
+        j_representative = self.find(j)
+        if i_representative == j_representative:
+            # elements are in the same set, no need to unite
+            return
+        irank = self.rank[i_representative]
+        jrank = self.rank[j_representative]
+        if irank < jrank:
+            # Move i under j
+            self.parent[i_representative] = j_representative
+        elif jrank > irank:
+            # Move j under i
+            self.parent[j_representative] = i_representative
+        else:
+            self.parent[i_representative] = j_representative
+            self.rank[j_representative] += 1
+
+# Example usage:
+size = 5
+ds = DisjointSet(size=size)
+ds.union_by_rank(0, 1)
+ds.union_by_rank(2, 3)
+ds.union_by_rank(1, 3)
+for i in range(size):
+    print(f'Element {i} belongs to the set with element {ds.find(i)}')
+```
+
 ## Algorithms
 
 ### 1. Sorting
@@ -550,8 +626,6 @@ def bfs(start_node, visited):
 #### 8c. Topological Sort
 
 A topological ordering of a graph is an ordering of its verticies such that, for every directed edge u->v in the graph, u comes before v in the ordering. It is possible to find a topological ordering for a graph if it is a Directed Acyclic Graph (DAG). One can use the topological sort algorithm to find a topological ordering. The essential idea of this algorithm is to repeatedly remove from the graph verticies which do not have incoming edges along with all their outgoing edges and adding them to the toplogical ordering in order of their removal. If this algorithm fails to remove all verticies, it shows that the graph has at least one cycle.
-
-#### 8d. Union Find
 
 #### 8e. Shortest paths: Djikstra's Algorithm
 
