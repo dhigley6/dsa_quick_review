@@ -527,7 +527,7 @@ def solve():
 
 Dynamic programming provides efficient methods to solve certain problems.
 
-Depending on the source, both top-down memoization and bottum-up tabulation may be considered dynamic programming techniques or just bottum-up tabulation. Bottom-up tabulation is iterative and benefits from not having the overhead of recursive top-down memoization, but memoization benefits from not having to solve all subproblems where that is not required. If all subproblems need to be solved at least once, then tabulation will usually outperform memoization by a constant factor.
+Depending on the source, both top-down memoization and bottum-up tabulation may be considered dynamic programming techniques or just bottum-up tabulation. Bottom-up tabulation is iterative and benefits from not having the overhead of recursive top-down memoization, but memoization benefits from not having to solve all subproblems where that is not required. If all subproblems need to be solved at least once, then tabulation will usually outperform memoization by a constant factor. For problems that can be solved using dynamic programming, the hard part is typically recognizing how to convert the problem into a recursive formulation that can then be solved using memoization or tabulation. A video going over different patterns of such problems is available here https://www.youtube.com/watch?v=9k31KcQmS_U.
 
 #### 7a. Top-Down Memoization
 
