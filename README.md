@@ -19,18 +19,21 @@ In the same manner as for time complexity of an algorithm, we can also examine i
 
 A data structure is a collection of data values with the relationships between them and the operations that can be applied to the data.
 
-### 1. Array
+### 1. Dynamic Referential Array
 
-An array is a collection of items of the same variable type stored at contiguous locations in memory.
+A basic array is a collection of items of the same variable type stored at contiguous locations in memory. A dynamic referential array builds upon this in two ways that increase its flexibility. First, the dynamic referential array is resized as needed when it becomes too large or small to fit into its current memory container (through adding or removing elements). This is the dynamic part. Second, the dynamic referential array does not directly contain its elements, but rather each point contains a reference to a location in memory where the actual element at that position is stored. This allows the array to contain arbitrary elements which can change in type at each index (the referential part).
 
 ```Python
 # Implementation in Python
 
-# Dynamic array (elements are added and removed as needed)
-array = []
+array = [5, 6, 7]
+array[1] = 2
+print(array)    # [5, 2, 7]
+array.append(8)
+print(array)    # [5, 2, 7, 8]
+_ = array.pop()
+print(array)    # [5, 2, 7]
 ```
-
-<!--- TODO: add notes on referential, dynamic arrays --->
 
 | Operation | Time Complexity |
 |-----------|-----------------|
@@ -42,10 +45,10 @@ array = []
 
 ### 2. Linked List
 
-A linked list a collection of elements where each element has a link to the next element (singly linked list), or a link to both the next and previous elements (doubly linked list). Unlinke an array, the elements in a linked list are not necessarily stored in sequential blocks of memory.
+A linked list a collection of elements where each element has a link to the next element (singly linked list), or a link to both the next and previous elements (doubly linked list). Unlinke in a basic array, the elements in a linked list are not necessarily stored in sequential blocks of memory.
 
 Tips
-- Create pointers to needed nodes before breaking links. Often in linked list problems, there will be situations where you need to manipulate the links between elements. In such cases, it is often important to first traverse the linked list in its original state to find nodes that you will need during or after the link manipulations. A well-known example occurs in reversing a linked list (https://leetcode.com/problems/reverse-linked-list/description/).
+- Create pointers to needed nodes before breaking links. Often in using linked lists, there will be situations where you need to manipulate the links between elements. In such cases, it is often important to first traverse the linked list in its original state to find nodes that you will need during or after the link manipulations. A well-known example occurs in reversing a linked list (https://leetcode.com/problems/reverse-linked-list/description/).
 - Dummy node. Often, linked list problems require iterating through the list elements. In such cases, it can be useful to create a dummy node as the first node in the iteration. The dummy node helps to not have to setup additional logic to handle the first element in the linked list, but is not used in the final returned result.
 
 ```Python
@@ -57,8 +60,6 @@ class Node:
         self.value = value
         self.next = next
 ```
-
-<!--- TODO: Add notes on positional linked list --->
 
 | Operation | Time Complexity |
 |-----------|-----------------|
