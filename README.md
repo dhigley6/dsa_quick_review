@@ -194,9 +194,8 @@ root.children = [child_1, child_2]
 ### 8. Heap
 A heap is a complete binary tree that satisfies the heap property (for every node, the value of its children is less than or equal to its own value (for a min heap), or for every node, the value of its children is greater than or equal to its own value (for a max heap).). A heap balances time complexity of finding the minimum/maximum with time complexity of insertion/removal. It is a good data structure when it is necessarily to repeatedly remove the minimum/maximum or when insertions need to be interspersed with removals of the minimum/maximum.
 
-<!--- TODO: Add implementation of maxheap in Python --->
 ```Python
-# Implementation in Python
+# Implementation of min heap in Python
 
 import heapq
 
@@ -212,6 +211,40 @@ heapq.heappush(heap, 30)
 # removing element
 element = heapq.heappop(heap)
 print(element)    # 5
+
+
+
+# Implementation of max heap in Python
+
+# Python does not have a built-in implementation of a max heap. A max heap can be created, however,
+# through clever use of the existing min heap implementation.
+# Doing this when all items are numerical can often be accomplished by multiplying each element by -1
+# before adding it to a minheap, then multiplying it by -1 again upon retrieval. However, this does
+# not work for all items, for example a max heap of strings. A more general way of building a max
+# heap in Python is to wrap your elements in a class which overrides the __lt__ method before insertion
+# into a min heap, then unwrapping them before retrieval as follows:
+
+class MaxHeapItem:
+
+    def __init__(self, item):
+        self.item = item
+
+    def __lt__(self, other):
+        return self.item > other.item
+
+# initialization of max heap
+heap = [5, 6, 7]
+wrapped_heap = [MaxHeapItem(i) for i in heap]
+heapq.heapify(wrapped_heap)
+
+# adding items
+heapq.heappush(wrapped_heap, MaxHeapItem(10))
+heapq.heappush(wrapped_heap, MaxHeapItem(20))
+heapq.heappush(wrapped_heap, MaxHeapItem(30))
+
+# removing element
+element = heapq.heappop(wrapped_heap).item
+print(element)    # 30
 ```
 
 | Operation | Time Complexity |
